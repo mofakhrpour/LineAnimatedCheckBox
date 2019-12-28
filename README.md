@@ -2,8 +2,7 @@
 Android CheckBox with line animation
 
 ## Animations
-Checkbox animations all are animated svg (android vector).<br />
-[This Medium article](https://proandroiddev.com/how-to-animate-on-android-f8d227135613) is helpful for animations on android.
+Checkbox animations all are animated svg (android vector). [This Medium article](https://proandroiddev.com/how-to-animate-on-android-f8d227135613) is helpful for animations on android.
 <br />
 <br />
 Thanks to android support appcompat library, Animated Vectors can run on android api < 21.<br />
