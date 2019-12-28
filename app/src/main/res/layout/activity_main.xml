@@ -4,17 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorGray"
     tools:context=".MainActivity">
 
-    <com.uglybear.lineanimatedcheckbox.LineAnimatedCheckBox
-        android:id="@+id/lineAnimatedCheckBox"
-        app:linebox_text="My Text"
-        app:linebox_backroundColor="@color/colorAccent"
-        app:linebox_tickColor="@color/colorBlack"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_centerInParent="true"
-        android:layout_marginLeft="6dp"
-        android:layout_marginRight="6dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content" >
+
+        <com.uglybear.lineanimatedcheckbox.LineAnimatedCheckBox
+            app:linebox_text="Sample"
+            app:linebox_tickColor="@color/colorBlack"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.uglybear.lineanimatedcheckbox.LineAnimatedCheckBox
+            app:linebox_text="Dark"
+            app:linebox_backroundColor="@color/colorBlack"
+            app:linebox_tickColor="@color/colorWhite"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.uglybear.lineanimatedcheckbox.LineAnimatedCheckBox
+            app:linebox_text="Pink"
+            app:linebox_backroundColor="@color/colorAccent"
+            app:linebox_tickColor="@color/colorBlack"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.uglybear.lineanimatedcheckbox.LineAnimatedCheckBox
+            app:linebox_text="Tick Color"
+            app:linebox_tickColor="@color/colorRed"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.uglybear.lineanimatedcheckbox.LineAnimatedCheckBox
+            app:linebox_text="Right To Left"
+            app:linebox_rtl="true"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
 
 </RelativeLayout>
