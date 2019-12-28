@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <declare-styleable name="LineAnimatedCheckBox">
+        <attr name="linebox_text" format="string"/>
+        <attr name="linebox_backroundColor" format="color"/>
+        <attr name="linebox_tickColor" format="color"/>
+        <attr name="linebox_rtl" format="boolean"/>
+    </declare-styleable>
+</resources>

@@ -8,6 +8,9 @@
 
     <com.uglybear.lineanimatedcheckbox.LineAnimatedCheckBox
         android:id="@+id/lineAnimatedCheckBox"
+        app:linebox_text="My Text"
+        app:linebox_backroundColor="@color/colorAccent"
+        app:linebox_tickColor="@color/colorBlack"
         android:layout_centerInParent="true"
         android:layout_marginLeft="6dp"
         android:layout_marginRight="6dp"
