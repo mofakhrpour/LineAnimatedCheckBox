@@ -90,5 +90,9 @@
     <orderEntry type="jdk" jdkName="Android API 28 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="lineanimatedcheckbox" />
+    <orderEntry type="module" module-name="lineanimatedcheckbox" />
+    <orderEntry type="module" module-name="lineanimatedcheckbox" />
+    <orderEntry type="module" module-name="lineanimatedcheckbox" />
+    <orderEntry type="module" module-name="lineanimatedcheckbox" />
   </component>
 </module>

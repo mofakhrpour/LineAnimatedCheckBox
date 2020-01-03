@@ -9,6 +9,7 @@ import android.support.v4.view.animation.LinearOutSlowInInterpolator;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -34,7 +35,9 @@ public class LineAnimatedCheckBox extends LinearLayout {
     private String text = "";
     private boolean rtl = false;
     private int backgroundColor = 0;
+    private int borderColor = 0;
     private int tickColor = 0;
+    private float checkboxSize = 0;
 
     public LineAnimatedCheckBox(Context context) {
         super(context);
@@ -62,7 +65,9 @@ public class LineAnimatedCheckBox extends LinearLayout {
             text = ta.getString(R.styleable.LineAnimatedCheckBox_linebox_text);
             rtl = ta.getBoolean(R.styleable.LineAnimatedCheckBox_linebox_rtl, false);
             backgroundColor = ta.getColor(R.styleable.LineAnimatedCheckBox_linebox_backroundColor, 0);
+            borderColor = ta.getColor(R.styleable.LineAnimatedCheckBox_linebox_borderColor, 0);
             tickColor = ta.getColor(R.styleable.LineAnimatedCheckBox_linebox_tickColor, 0);
+            checkboxSize = ta.getDimension(R.styleable.LineAnimatedCheckBox_linebox_size, 0);
         } finally {
             ta.recycle();
         }
@@ -71,10 +76,11 @@ public class LineAnimatedCheckBox extends LinearLayout {
     private void initView() {
 
         setBackgroundResource(android.R.color.transparent);
-        setPadding(0, dpToPx(6), 0, dpToPx(6));
+        setPadding(getPaddingLeft(), dpToPx(6)+getPaddingTop(), getPaddingRight(), dpToPx(6)+getPaddingBottom());
 
         richPathView = new RichPathView(getContext());
-        LinearLayout.LayoutParams layoutParams = new LayoutParams(dpToPx(20), dpToPx(20));
+        int size = checkboxSize == 0 ? dpToPx(20) : (int)checkboxSize;
+        LinearLayout.LayoutParams layoutParams = new LayoutParams(size, size);
         layoutParams.setMargins(dpToPx(6), 0, dpToPx(6), 0);
         richPathView.setLayoutParams(layoutParams);
         richPathView.setVectorDrawable(R.drawable.checkbox_unchecked);
@@ -92,6 +98,11 @@ public class LineAnimatedCheckBox extends LinearLayout {
             rectBackground.setFillColor(backgroundColor);
         }
 
+        if (borderColor != 0) {
+            RichPath rectBorder = richPathView.findRichPathByName("rect_border");
+            rectBorder.setStrokeColor(borderColor);
+        }
+
         richPathView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,13 +117,13 @@ public class LineAnimatedCheckBox extends LinearLayout {
         textView.setText(text);
         textView.setTextSize(TypedValue.COMPLEX_UNIT_SP,14);
         textView.setTextColor(getResources().getColor(android.R.color.black));
-
         textView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 setChecked(!isChecked());
             }
         });
+        setGravity(Gravity.CENTER);
 
         if (rtl) {
             addView(textView);
@@ -131,6 +142,8 @@ public class LineAnimatedCheckBox extends LinearLayout {
             }
         });
     }
+
+
 
     private int pxToDp(double px) {
         DisplayMetrics metrics = getResources().getDisplayMetrics();
@@ -187,6 +200,7 @@ public class LineAnimatedCheckBox extends LinearLayout {
                 RichPath rectBackground = richPathView.findRichPathByName("rect_background");
                 if (backgroundColor != 0) rectBackground.setFillColor(backgroundColor);
                 RichPath rectBorder = richPathView.findRichPathByName("rect_border");
+                if (borderColor != 0) rectBorder.setStrokeColor(borderColor);
                 RichPath rectMain = richPathView.findRichPathByName("rect_main");
                 RichPath tick = richPathView.findRichPathByName("tick");
                 if (tickColor != 0){
@@ -223,7 +237,7 @@ public class LineAnimatedCheckBox extends LinearLayout {
                         // rectBorder
                         .andAnimate(rectBorder)
                         .interpolator(new DecelerateInterpolator())
-                        .strokeColor(Color.parseColor("#8e8e8e"), tickColor == 0 ? Color.parseColor("#000000") : tickColor)
+                        .strokeColor(borderColor == 0 ? Color.parseColor("#8e8e8e") : borderColor, tickColor == 0 ? Color.parseColor("#000000") : tickColor)
                         .startDelay(448)
                         .duration(363)
 
@@ -260,6 +274,7 @@ public class LineAnimatedCheckBox extends LinearLayout {
                 RichPath rectBackground = richPathView.findRichPathByName("rect_background");
                 if (backgroundColor != 0) rectBackground.setFillColor(backgroundColor);
                 RichPath rectBorder = richPathView.findRichPathByName("rect_border");
+                if (borderColor != 0) rectBorder.setStrokeColor(borderColor);
                 RichPath rectMain = richPathView.findRichPathByName("rect_main");
                 RichPath tick = richPathView.findRichPathByName("tick");
                 if (tickColor != 0){
@@ -303,7 +318,7 @@ public class LineAnimatedCheckBox extends LinearLayout {
                         // rectBorder
                         .andAnimate(rectBorder)
                         .interpolator(new DecelerateInterpolator())
-                        .strokeColor(tickColor == 0 ? Color.parseColor("#000000") : tickColor, Color.parseColor("#8e8e8e"))
+                        .strokeColor(tickColor == 0 ? Color.parseColor("#000000") : tickColor, borderColor == 0 ? Color.parseColor("#8e8e8e") : borderColor)
                         .duration(10)
 
                         .andAnimate(rectBorder)

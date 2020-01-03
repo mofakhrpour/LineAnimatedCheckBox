@@ -14,6 +14,15 @@
         android:layout_height="wrap_content" >
 
         <com.uglybear.lineanimatedcheckbox.LineAnimatedCheckBox
+            app:linebox_text="Custom Size"
+            app:linebox_tickColor="@color/colorBlack"
+            app:linebox_size="55dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.uglybear.lineanimatedcheckbox.LineAnimatedCheckBox
             app:linebox_text="Sample"
             app:linebox_tickColor="@color/colorBlack"
             android:layout_marginTop="6dp"
@@ -22,7 +31,7 @@
             android:layout_height="wrap_content" />
 
         <com.uglybear.lineanimatedcheckbox.LineAnimatedCheckBox
-            app:linebox_text="Dark"
+            app:linebox_text="Dark Background"
             app:linebox_backroundColor="@color/colorBlack"
             app:linebox_tickColor="@color/colorWhite"
             android:layout_marginTop="6dp"
@@ -31,8 +40,9 @@
             android:layout_height="wrap_content" />
 
         <com.uglybear.lineanimatedcheckbox.LineAnimatedCheckBox
-            app:linebox_text="Pink"
+            app:linebox_text="Custom Background"
             app:linebox_backroundColor="@color/colorAccent"
+            app:linebox_borderColor="@color/colorPinkDark"
             app:linebox_tickColor="@color/colorBlack"
             android:layout_marginTop="6dp"
             android:layout_marginBottom="6dp"
@@ -40,7 +50,7 @@
             android:layout_height="wrap_content" />
 
         <com.uglybear.lineanimatedcheckbox.LineAnimatedCheckBox
-            app:linebox_text="Tick Color"
+            app:linebox_text="Custom Tick Color"
             app:linebox_tickColor="@color/colorRed"
             android:layout_marginTop="6dp"
             android:layout_marginBottom="6dp"
