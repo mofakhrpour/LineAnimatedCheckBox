@@ -1,5 +1,7 @@
 # LineAnimatedCheckBox
 Android CheckBox with line animation
+<br />
+Minimum SDK Support: 14
 
 <br />
 
