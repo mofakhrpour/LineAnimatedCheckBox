@@ -10,3 +10,7 @@ But some of phones have some bug on running Animated Vectors (can not run parall
 [RichPath](https://github.com/tarek360/RichPath) let you access svg paths on the code and also let you animate them by java codes.
 
 <img src="https://github.com/mofakhrpour/LineAnimatedCheckBox/blob/master/demo.gif" width="300"/>
+
+## Tools
+AdobeXD for making svg file ([project file](https://github.com/mofakhrpour/LineAnimatedCheckBox/blob/master/svg/Adobe%20XD%20(Svg).xd))
+ShapeShifter for animating svg ([shapeshifter.design](https://shapeshifter.design)) ([project file](https://github.com/mofakhrpour/LineAnimatedCheckBox/blob/master/svg/Vector%20Animation%20(ShapeShifter.design).shapeshifter))
