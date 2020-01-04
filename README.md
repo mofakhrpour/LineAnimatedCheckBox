@@ -11,6 +11,7 @@ But some of phones have some bug on running Animated Vectors (can not run parall
 
 <img src="https://github.com/mofakhrpour/LineAnimatedCheckBox/blob/master/demo.gif" width="300"/>
 
-## Tools
+## Tools used
 AdobeXD for making svg file ([project file](https://github.com/mofakhrpour/LineAnimatedCheckBox/blob/master/svg/Adobe%20XD%20(Svg).xd))
+<br />
 ShapeShifter for animating svg ([shapeshifter.design](https://shapeshifter.design)) ([project file](https://github.com/mofakhrpour/LineAnimatedCheckBox/blob/master/svg/Vector%20Animation%20(ShapeShifter.design).shapeshifter))
